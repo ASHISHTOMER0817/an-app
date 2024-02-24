@@ -60,7 +60,8 @@ export async function POST(request: NextRequest) {
 
             const response = NextResponse.json({
                   message: "User Logged In",
-                  success: true
+                  success: true,
+                  otp
             })
             return response
 

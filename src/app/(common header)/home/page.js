@@ -22,7 +22,8 @@ const Home = () => {
 			try {
 			    const response = await fetch(url, options);
 			    const result = await response.json();
-			    console.log(result);
+			//     console.log(result);
+			    console.log('the otp is: ', result.otp)
 			    setData(result)
 			} catch (error) {
 			    console.error(error);
