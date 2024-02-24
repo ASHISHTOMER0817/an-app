@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken"
 import {User} from "../../../model/schema";
 import dbConfig from "../../../dbConfig/dbConfig"
 import { sendEmail } from "../../../helpers/mailer";
+import mail from "@sendgrid/mail";
 
 
 dbConfig()
@@ -36,9 +37,25 @@ export async function POST(request: NextRequest) {
             console.log(savedUser)
 
 
-            //Send verification email
+            //Send verification email to mailtrap
             await sendEmail({email, otp})
 
+            //SendGrid mail
+            mail.setApiKey(process.env.SENDGRID_API_KEY);
+            const message = `
+            Name:Kapa Jobs \r\n
+            Email: This email ${email} used to register with Kapa Jobs\r\n
+            Message: You need this OTP- ${otp} to verify your account.
+            `
+            const data = {
+                  to: `${email}`,
+                  from: 'ashish0817tomer@gmail.com',
+                  subject: 'Verification email !',
+                  text: message,
+                  html: message.replace(/\r\n/g,'<br>')
+            }
+
+            mail.send(data)
 
 
             const response = NextResponse.json({
