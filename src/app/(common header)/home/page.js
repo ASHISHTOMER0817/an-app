@@ -2,7 +2,7 @@
 
 import { useContext, useEffect, useState } from "react";
 import { Main } from "../../components/Main";
-import { CoinContext } from "../layout";
+import { CoinContext } from "../CoinContext";
 
 const Home = () => {
 	const { updateValue } = useContext(CoinContext);
