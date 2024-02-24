@@ -1,9 +1,14 @@
-"use client";
+'use client'
 import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import Footer from "../../components/footer";
+import { useRouter } from "next/navigation";
 
 const Profile = () => {
+
+	const router = useRouter()
+
+
 	interface User {
 		name: string;
 		mobile: string;
@@ -71,6 +76,7 @@ const Profile = () => {
 		}
 	};
 
+
 	async function allCredentials() {
 		try {
 			const response = await axios.post("/api/profile", { user });
@@ -82,6 +88,7 @@ const Profile = () => {
 
 			if (verify === true) {
 				console.log("uploaded", verify);
+				router.push('/home')
 			} else {
 				console.log(message, verify);
 			}
