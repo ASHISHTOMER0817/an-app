@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  h1 {
+    @apply text-2xl
+  }
+  h2 {
+    @apply text-xl
+  }
+  h3 {
+    @apply text-lg
+  }
+  h4 {
+    @apply text-base
+  }
+  h5 {
+    @apply text-sm
+  }
+  h6 {
+    @apply text-xs
+  }
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary: rgb(59 130 246);
+  --secondary: white;
+  --light-border: rgb(221, 221, 221);
+}
+
+.header{
+  display: flex;
+  padding: 4px 2rem;
+  border-bottom: 2px solid var(--light-border);
+  align-items: center;
+}
+
+.logo-image{
+  height: 50px !important;
+}
+
+.header img{
+  height: 40px;
+  width: 100%;
+}
+
+.right-align{
+  margin-left: auto;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem 1.5rem;
+
+}
+
+.card-wrapper > div{
+  padding: 1rem;
+  border: 1px solid var(--light-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 400px;
+}
+
+.button{
+  padding: 8px 1rem;
+  border: none;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.button-primary{
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.top-section{
+  display: flex;
+  gap: 1rem;
+}
+
+.right-section{
+  margin-left: auto;
+
+}
+
+form.profile-form{
+  margin: 1rem 1.5rem;
+}
+
+.coin-wrapper{
+  position: relative;
+}
+
+.coin-value{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.user-menu{
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%);
+  padding: 8px;
+  box-shadow:  0 0 10px var(--light-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  background: var(--secondary);
+  min-width: 130px;
+}
+
+.popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 350px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 20px; 
+  width: 80%;
+}
