@@ -30,7 +30,7 @@ const Home = () => {
 
 		};
 
-		// fetchData();
+		fetchData();
 	}, []);
 	return (
 		<div className="outer-div">
