@@ -14,9 +14,9 @@ const Page = () =>{
         try {
             async function getApplications() {
                 const response = await axios.get('/api/appliedJobs')
-                console.log(response)
-                console.log(response.data.data)
-                console.log(response.data)
+                // console.log(response)
+                // console.log(response.data.data)
+                // console.log(response.data)
                 setAppliedJobs(response.data.data)
             }
             getApplications()
