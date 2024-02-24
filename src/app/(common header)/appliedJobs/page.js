@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Main } from "../../components/Main";
 import axios from "axios";
+import Content from "../../components/MainContent";
 
 const Page = () =>{
 
