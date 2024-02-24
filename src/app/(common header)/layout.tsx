@@ -96,7 +96,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 		<div>
 			<CoinContext.Provider value={{ coinValue, updateValue }}>
 				<Header
-					classList={"flex flex-col min-h-screen"}
+					classList={"flex flex-col "}
 					coinValue={coinValue}
 				/>
 				<div className="flex-1">{children}</div>

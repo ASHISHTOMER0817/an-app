@@ -11,8 +11,6 @@ const Home = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const url = 'https://jobs-api14.p.rapidapi.com/list?query=Software%20Engineer&location=India&language=en_GB';
-        //   const  url = 'https://jobs-api14.p.rapidapi.com/list';
-
 			const options = {
 			    method: 'GET',
 			    headers: {
@@ -32,7 +30,7 @@ const Home = () => {
 
 		};
 
-		fetchData();
+		// fetchData();
 	}, []);
 	return (
 		<div className="outer-div">

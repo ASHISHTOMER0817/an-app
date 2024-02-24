@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConfig from "../../../dbConfig/dbConfig"
-import { hirerInfo } from "../../../model/schema";
+import { HirerInfo } from "../../../model/schema";
 import { UserInfo } from "../../../model/schema";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken"
@@ -9,7 +9,7 @@ import jwt from "jsonwebtoken"
 dbConfig()
 export async function POST(request: NextRequest) {
       try {
-            console.log('hello')
+            // console.log('hello')
             const reqBody = await request.json()
 
             const cookieStore = cookies()
@@ -24,11 +24,11 @@ export async function POST(request: NextRequest) {
             } else {
 
                   const { email } = decodedToken
-                  console.log({ email })
+                  // console.log({ email })
                   const user = await UserInfo.findOne({ email })
 
-                  const newHirer = await new hirerInfo({...reqBody.hirerDetails, email})
-                  console.log(newHirer)
+                  const newHirer = await new HirerInfo({...reqBody.hirerDetails, email})
+                  // console.log(newHirer)
 
 
                   if (user.totalCoin >= 50) {

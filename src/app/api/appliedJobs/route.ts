@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConfig from "../../../dbConfig/dbConfig"
-import { hirerInfo } from "../../../model/schema";
+import { HirerInfo } from "../../../model/schema";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken"
 
@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken"
 dbConfig()
 export async function GET(request: NextRequest) {
       try {
-            console.log('hello')
+            // console.log('hello')
             const reqBody = await request.json()
 
             const cookieStore = cookies()
@@ -18,18 +18,19 @@ export async function GET(request: NextRequest) {
             if (getCookies === undefined) {
 
                   return NextResponse.json({
-                        message: "user is logged out/user doesn't exist", success: false
+                        message: "user is logged out/user doesn't exist", success: false, statusCode: 399
                   })
             } else {
 
                   const { email } = decodedToken
-                  console.log({ email })
-                  const hirerList = await hirerInfo.find({ email }).exec()
+                  // console.log({ email })
+                  // const hirerList = await HirerInfo.find({ email }).exec()
+                  const hirerList = await HirerInfo.findById({ email })
 
                   console.log(hirerList)
                   return NextResponse.json({
-                        Headers: hirerList,
-                        message: "don't have enough coin balance", success: false, statusCode: 399
+                        data: hirerList,
+                        message: "User successfully getting the list of applied jobs", success: true, statusCode: 200
                   })
             }
 

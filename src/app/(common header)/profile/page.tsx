@@ -692,7 +692,6 @@ const Profile = () => {
 					</div>
 				</div>
 			</form>
-			<Footer classList={''} />
 		</>
 	);
 };

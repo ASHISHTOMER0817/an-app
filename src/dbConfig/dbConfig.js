@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { CoinDivision } from "../model/schema";
 export default async function DatabaseConnection() {
 	try {
 		if (process.env.MONGODB_URL !== undefined) {
@@ -7,7 +6,9 @@ export default async function DatabaseConnection() {
 				.connect(process.env.MONGODB_URL)
 				.then(() => console.log("the MONGODB is connected"));
 			const connection = mongoose.connection;
-
+			const db = connection
+			const hirerList =db.collection('hirerInfos').findOne({email:'micom180300@gmail.com'})
+			console.log(hirerList)
 			connection.on("connected", () => {
 				console.log("MongoDB connected successfully");
 			});

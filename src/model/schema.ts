@@ -251,8 +251,8 @@ const hirerSchema = new mongoose.Schema({
 
 const User = mongoose.models.users || mongoose.model('users', UserSchema)
 const UserInfo = mongoose.models.userinfos || mongoose.model('userinfos', UserInfoSchema)
-const hirerInfo = mongoose.models.hirerinfos || mongoose.model('hirerinfos', hirerSchema)
+const HirerInfo = mongoose.models.hirerinfos || mongoose.model('hirerinfos', hirerSchema)
 const CoinDivision = mongoose.models.coindivisions || mongoose.model('coindivisions', CoinSchema)
 
 
-export { User, UserInfo, hirerInfo, CoinDivision };
+export { User, UserInfo, HirerInfo, CoinDivision };

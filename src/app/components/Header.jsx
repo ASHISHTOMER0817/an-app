@@ -17,7 +17,7 @@ export const Header = ({ classList, coinValue }) => {
 
 	const logout = async () => {
 		try {
-			await axios.get("/api/logout");
+			await axios.post("/api/logout");
 			router.push("/");
 		} catch (error) {
 			console.log(error.message);
